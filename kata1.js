@@ -1,4 +1,4 @@
-// 21 reverter a string e adicionar espaços entre as letras
+// reverter a string e adicionar espaços entre as letras
 // https://www.codewars.com/kata/58d76854024c72c3e20000de/train/javascript
 
 function reverse(str) {

@@ -1,4 +1,4 @@
-// 4 filtrar os café de acordo com seu budget
+// filtrar os café de acordo com seu budget
 // https://www.codewars.com/kata/56069d0c4af7f633910000d3/train/javascript
 
 function search(budget, prices) {

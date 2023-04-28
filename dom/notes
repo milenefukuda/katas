@@ -1,0 +1,181 @@
+// 1 getElementById()
+// const element = document.getElementById("blog-title");
+// console.log(element);
+
+// 2 getElementByClassName()
+// const element = document.getElementByClassName("one")
+// console.log(element) == é suposto mostrar os dois elementos no html que levam o nome da classe de "one"
+
+// 3 getElementsByTagName ()
+// const element = document.getElementByTagName("h1" || "meta" || "body")
+// console.log(element)
+
+// 4 querySelector() == pega o primeiro que encontrar
+// const element = document.querySelector(".class" || "#id" || "meta" || "[src]")
+// console.log(element)
+
+// 5 querySelectorAll() == traz a coleção
+// const elements = document.querySelectorAll(".one")
+// elements.forEach(el => console.log(el))
+// como o querySelectorAll retorna uma node list, é possível aplicar o forEach
+// caso tivessemos feito a seleção com o getElementById, isso não seria possível pq nesse caso o que temos de retorno é um HTML colection
+
+// Qual usar?
+
+//getElementById (element)
+//getElementByClassName (HTMLCollection)
+//getElementByTagName(HTMLCollection)
+//querySelector(element)
+//querySelectorAll(Nodelist)
+
+// 6 Manipulando conteúdo
+// TextContent
+
+// const element = document.querySelector('h1')
+// element.textContent = "olá devs"
+// ou
+// console.log(element.textContent)
+// para concatenar os textos é só fazer element.textContent += "olá devs"
+
+// 7 Manipulando conteúdo
+// innerText
+
+// const element = document.querySelector ('h1')
+// element.innerText = "olá devs"
+
+// 8 Manipulando conteúdo
+// innerHTML == adicionar HTML dentro do meu js
+
+// const element = document.querySelector('h1')
+// element.innerHTML = "olá devs <small>!!!</small>"
+
+// 9 Manipulando conteúdo
+// value
+
+// const element =  document.querySelector('input')
+// quando um input tem coisas dentro dele, ele está populado
+// para popular um input usamos o
+// element.value = "valor que eu quiser colocar dentro da caixinha do input"
+
+// 10 Alterando estilos
+// Não se usa background-color como no CSS e sim CamelCase
+
+// const element = document.querySelector('body')
+// element.style.backgroundColor = "cor qualquer" == assim atribuimos valores
+// console.log (element.style.backgroundColor) == assim descobrimos os valores
+
+// 11 Navegando pelos elementos
+// parentNode parentElement
+
+// const element = document.querySelector('body')
+// para descobrir quem é o pai do body usamos
+// console.log (element.parentNode)
+// outro exemplo
+// const element = document.querySelector('h1')
+// console.log(element.parentElement)
+
+// 12 Navegando pelos elementos
+// childNodes children
+
+// const el = document.querySelector('body')
+// para verificar quem é o filho
+// console.log (el.childNodes) == NOTA childNodes retorna Nodelist e children retorn HTMLCollection
+// o "text" que retorna dentro dos elementos do childNodes refere ao espaço no html entre os outros elementos
+
+// firstChild OU firstElementChild
+// firstChild leva em consideração o espaço vazio
+// firstElementChild não leva em consideração o espaço vazio - pega o primeiro elemento
+
+// lastChild OU lastElementChild
+// console.log(el.lastElementChild)
+
+// 13 Navegando pelos elementos
+// nextSibling OU nextElementSibling
+
+// const el = document.querySelector('header')
+// console.log(el.nextSibling) == pega o "text" que é o espaço vazio do html
+// console.log(el.nextElementSibling) ==  não pega o espaço vazio e mostra quem é o próximo
+
+// mesmas regras para usar os previous
+// previousSibling OU previousElementSibling
+
+// 14 Criando e adicionando elementos
+// createElement
+// const div(pode ser qualquer texto) = document.createElement('div')
+// div.innerText = "ola devs"
+
+// append prepend
+// const body = document.querySelector('body')
+// body.prepend(div)
+// body.append(div)
+
+// 15 Adicionando elementos
+// const div = document.createElement('div')
+// div.innerText = "ola devs"
+
+// insertBefore
+// const body = document.querySelector('body')
+// const script = body.querySelector('script')
+// body.insertBefore(div,script)
+// pega o parent (nesse ex: body) depois adiciona o inserBefore
+// e nos argumentos que são dois primeiro se coloca o novo elemento (ex: div) que se quer
+// adicionar e depois passa a ref (ex: script)
+// caso queira adicionar depois usa a seguinte formula
+// body.inserBefore(div,script.nextElementSibling) == isso simula um insertAfter
+
+// 16 Eventos
+
+// se colocamos on no html aparece uma lista de eventos possiveis
+// ex de sintaxte <h1 onclick = "print()"> meu blog </h1> no html
+// depois no meu js escrevo
+// function print(){
+//    console.log('print')
+// }
+
+// Evento de teclado
+// const input = document.querySelector('input')
+// input.onekeydown = function (){
+//    console.log('rodei')
+// }
+
+// Evento pelo JS
+// const h1 = document.querySelector('h1')
+// h1.addEventListener('click', print)
+// function print ( ){
+//    console.log('print')
+// }
+
+// outra maneira de aplicar evento pelo js
+
+// const h1 = document.querySelector('h1')
+// h1.addEventListener ('click', print)
+// function print (){
+//    console.log('print')
+//}
+
+// h1.addEventListener('click, function (){
+//    console.log('outro momento')
+//})
+
+// é também possível escrever dessa maneira
+// h1.onclick = print
+// function print ( ){
+// console.log('print)
+//}
+// porém se crio embaixo uma nova função, por exemplo
+// h1.onclick = function (){
+//    console.log("outro momento")
+//}
+// o programa esquece a primeira e considera só a ultima que encontrar
+// o addEventListener imprime todas
+
+// Eventos
+// argumento event
+
+// const input = document.querySelector('input')
+// input.onekeypress=function(event){
+//     console.log(event)
+// console.log (event.key) == opções de eventos
+// console.log (event.currentTarget)
+// console.log (event.currentTarget.value)
+// }
